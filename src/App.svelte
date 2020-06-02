@@ -4,19 +4,16 @@
   let output = { output: "" };
   async function handleClick() {
     if (!input) return false;
-    const response = await fetch(
-      "https://cors-anywhere.herokuapp.com/http://parafraseo.herokuapp.com/",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          text: input,
-          number: 1
-        }),
-        headers: {
-          "Content-Type": "application/json"
-        }
+    const response = await fetch("/", {
+      method: "POST",
+      body: JSON.stringify({
+        text: input,
+        number: 1
+      }),
+      headers: {
+        "Content-Type": "application/json"
       }
-    );
+    });
     output = await response.json();
     console.log(output);
   }
