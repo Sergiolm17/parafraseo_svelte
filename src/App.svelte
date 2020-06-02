@@ -30,6 +30,9 @@
     grid-template-rows: 50vh 1fr;
     min-height: 50vh;
   }
+  p {
+    justify-self: center;
+  }
 </style>
 
 <div>
