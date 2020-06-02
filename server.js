@@ -1,6 +1,11 @@
 var express = require("express");
 var app = express();
 
+const translate = require("google-translate-free");
+const languages = require("./langs").langs;
+var bodyParser = require("body-parser");
+
+app.use(bodyParser.json());
 app.use(express.static("public"));
 app.post("/", async (req, res) => {
   var randlangs = shuffle(Object.keys(languages));
